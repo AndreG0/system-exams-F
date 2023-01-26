@@ -1,0 +1,8 @@
+.bg{
+  background-image: url(../../../../assets/img/spece.jpg)!important;
+  padding-top:100px !important;
+  background-size: cover;
+  width:100%;
+  position: absolute;
+  margin-left: -12px;
+}

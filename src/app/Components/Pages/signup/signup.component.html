@@ -1,0 +1,60 @@
+
+
+
+<div class="bootstrap-wrapper bg">
+  <div class="container">
+    <div class="row" style="margin-top:5px;">
+      <div class="col-md-6 offset-md-3 backG ">
+        <div class="container text-center my-1">
+            <img src="../../../../assets/img/icon.png" width="100" height="100">
+        </div>
+        <h1 class="text-center my-1 text-white">Registration Form</h1>
+
+        <form (ngSubmit)="formSubmit()">
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="text-white ">Username</mat-label>
+            <input required [(ngModel)]="user.username" name="username"  matInput placeholder="Username" >
+          </mat-form-field>
+
+          <mat-form-field class="full-width " appearance="outline">
+            <mat-label class="text-white">Password</mat-label>
+            <input required [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Password">
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="text-white">Name</mat-label>
+            <input required [(ngModel)]="user.name" name="name" matInput placeholder="Name">
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="text-white">Lastname </mat-label>
+            <input required [(ngModel)]="user.lastname " name="lastname" matInput placeholder="Lastname ">
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="text-white">Email</mat-label>
+            <input required [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Email">
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label class="text-white">Number</mat-label>
+            <input required [(ngModel)]="user.number" name="number" matInput placeholder="Number">
+          </mat-form-field>
+
+          <div class="container text-center my-3">
+            <button mat-raised-button color="primary">Send</button>
+            <button type="reset"  style="margin-left: 20px;" mat-raised-button color="accent">Clean</button>
+        </div>
+
+        </form>
+
+
+
+          <br><br><br>
+
+
+      </div>
+    </div>
+  </div>
+</div>
