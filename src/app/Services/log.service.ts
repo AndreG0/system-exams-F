@@ -1,11 +1,16 @@
+
 import { Injectable } from '@angular/core';
-import baseUrl from './helper';
+
 import { HttpClient } from '@angular/common/http';
+import baseUrl from './helper';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LogService {
+
+  public loginStatusSubjec = new Subject<boolean>();
 
   constructor(private http:HttpClient) { }
 
@@ -16,7 +21,7 @@ export class LogService {
 
   //start session and generate token in the localStorage
   public loginUser(token:any){
-    localStorage.getItem(token);
+    localStorage.setItem('token', token);
   }
   //Checks the connection
   public isLoggedIn(){

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LogService } from './../../../Services/log.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
@@ -13,21 +14,21 @@ export class LoginComponent implements OnInit{
     "username": '',
     "password": ''
   }
-  constructor(private snack:MatSnackBar, private logService:LogService){}
+  constructor(private snack:MatSnackBar, private logService:LogService, private router:Router){}
 
   ngOnInit(): void {
 
   }
 
   formSubmit(){
-    if(this.loginData.username.trim() === '' || this.loginData.username.trim() === null){
+    if(this.loginData.username.trim() == '' || this.loginData.username.trim() == null){
         this.snack.open('The username is required!!', 'Accept',{
           duration: 3000
         })
         return;
     }
 
-    if(this.loginData.password.trim() === '' || this.loginData.password.trim() === null){
+    if(this.loginData.password.trim() == '' || this.loginData.password.trim() == null){
       this.snack.open('The password is required!!', 'Accept',{
         duration: 3000
       })
@@ -36,10 +37,27 @@ export class LoginComponent implements OnInit{
     this.logService.generateToken(this.loginData).subscribe(
       (data:any) => {
         console.log(data);
+
         this.logService.loginUser(data.token);
         this.logService.getCurrentUser().subscribe((user:any) => {
           this.logService.setUser(user);
           console.log(user);
+          if(this.logService.getUserRole()== "ADMIN"){
+            //ADMIN
+            //window.location.href = '/admin';
+            this.router.navigate(['admin']);
+            this.logService.loginStatusSubjec.next(true);
+          }
+          else if(this.logService.getUserRole() == "USER"){
+            //USER
+            //window.location.href = '/user';
+            this.router.navigate(['user']);
+            this.logService.loginStatusSubjec.next(true);
+          }
+          else{
+            this.logService.logout();
+          }
+
         })
       },
       (error) => {

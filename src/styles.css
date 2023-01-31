@@ -2,15 +2,20 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 html, body { height: 100%; }
-body { margin: 0;
-  font-family: 'Abel', sans-serif !important;
-  font-size: 12px;
- 
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #f5f5f5;
 }
 
-.full-width {
+.text-center{
+  text-align: center;
+}
+
+.full-width{
   width: 100%;
 }
+
 .ml20{
   margin-left: 20px !important;
 }

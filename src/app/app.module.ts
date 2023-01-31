@@ -1,6 +1,6 @@
 import { AuthInterceptorProviders } from './Services/auth.interceptor';
 
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
@@ -15,12 +15,23 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+
 
 import { NavbarComponent } from './Layout/navbar/navbar.component';
 import { FooterComponent } from './Layout/footer/footer.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { SignupComponent } from './Components/Pages/signup/signup.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './Components/Pages/Admin-dashboard/admin/admin.component';
+import { UserComponent } from './Components/Pages/user/user.component';
+import { ProfileComponent } from './Components/Pages/profile/profile.component';
+import { SidebarComponent } from './Components/Pages/Admin-dashboard/sidebar/sidebar.component';
+import { WelcomeComponent } from './Components/Pages/Admin-dashboard/welcome/welcome.component';
+import { ViewCategoriesComponent } from './Components/Pages/Admin-dashboard/view-categories/view-categories.component';
+import { AddCategoryComponent } from './Components/Pages/Admin-dashboard/add-category/add-category.component';
+
+
 
 
 
@@ -32,6 +43,16 @@ import { HomeComponent } from './home/home.component';
     SignupComponent,
     HomeComponent,
     LoginComponent,
+    AdminComponent,
+    UserComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent,
+    ViewCategoriesComponent,
+    AddCategoryComponent,
+
+
+
 
 
   ],
@@ -48,6 +69,7 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     HttpClientModule,
     FormsModule,
+    MatListModule
 
   ],
   providers: [AuthInterceptorProviders],

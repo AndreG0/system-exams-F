@@ -3,13 +3,13 @@ import { LogService } from './log.service';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor{
 
-  token : any;
+//token : any;
 
 constructor(private logService:LogService){
-
   }
 
 intercept(req:HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -17,6 +17,7 @@ intercept(req:HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.logService.getToken();
     if(token != null){
       authRequest = authRequest.clone({
+        //setHeaders: {'Authorization': 'Bearer ' + this.token}
         setHeaders : {Authorization: `Bearer ${token}` }
       })
     }
@@ -30,7 +31,6 @@ export const AuthInterceptorProviders = [
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,
     multi : true
-
   }
 
 ]
