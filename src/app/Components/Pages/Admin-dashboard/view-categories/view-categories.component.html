@@ -1,25 +1,26 @@
 <mat-card>
-  <mat-list>
+  <mat-list >
     <div class="text-secondary" mat-subheader>
       All categories
     </div>
+<div class="container-fluid p-3 ">
+  <mat-list-item *ngFor = "let c of categories">
 
-    <mat-list-item *ngFor = "let c of categories">
+    <div class=" row d-flex justify-content-start p-3 my-2">
+      <div class="text-dark">{{ c.title }}</div>
+      <div class=" text-secondary">{{ c.description }}</div>
+            <mat-divider></mat-divider> <mat-divider></mat-divider>
+    </div>
 
+  </mat-list-item>
 
-      <div class=" row d-flex justify-content-start p-3 my-2">
+</div>
 
-        <div class=" md-5"> {{ c.title }}</div>
-
-        <div class=" text-secondary md-5">{{ c.description }}</div>
-<mat-divider></mat-divider> <mat-divider></mat-divider>
-      </div>
-
-    </mat-list-item>
   </mat-list>
 
-  <div class="container justify-content-center my-2">
-    <button routerLink="/admin/add-categoria" mat-raised-button color="primary">Add Category</button>
+
+  <div class="container text-center mt20 my-2">
+    <button routerLink="/admin/add-category" mat-raised-button color="primary">Agregar categoría</button>
   </div>
 
 </mat-card>

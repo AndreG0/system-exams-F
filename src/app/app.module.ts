@@ -30,6 +30,8 @@ import { SidebarComponent } from './Components/Pages/Admin-dashboard/sidebar/sid
 import { WelcomeComponent } from './Components/Pages/Admin-dashboard/welcome/welcome.component';
 import { ViewCategoriesComponent } from './Components/Pages/Admin-dashboard/view-categories/view-categories.component';
 import { AddCategoryComponent } from './Components/Pages/Admin-dashboard/add-category/add-category.component';
+import { ViewExamsComponent } from './Components/Pages/Admin-dashboard/view-exams/view-exams.component';
+import { AddExamComponent } from './Components/Pages/Admin-dashboard/add-exam/add-exam.component';
 
 
 
@@ -50,6 +52,8 @@ import { AddCategoryComponent } from './Components/Pages/Admin-dashboard/add-cat
     WelcomeComponent,
     ViewCategoriesComponent,
     AddCategoryComponent,
+    ViewExamsComponent,
+    AddExamComponent,
 
 
 

@@ -1,3 +1,6 @@
+import { AddExamComponent } from './Components/Pages/Admin-dashboard/add-exam/add-exam.component';
+import { ViewExamsComponent } from './Components/Pages/Admin-dashboard/view-exams/view-exams.component';
+import { AddCategoryComponent } from './Components/Pages/Admin-dashboard/add-category/add-category.component';
 import { ViewCategoriesComponent } from './Components/Pages/Admin-dashboard/view-categories/view-categories.component';
 import { AdminGuard } from './Services/admin.guard';
 import { NormalGuard } from './Services/normal.guard';
@@ -21,7 +24,10 @@ const routes: Routes = [
   {path: 'admin', component:AdminComponent, canActivate:[AdminGuard],
    children: [ {path:'profile', component:ProfileComponent},
                {path: '', component:WelcomeComponent},
-               {path: 'categories', component:ViewCategoriesComponent}
+               {path: 'categories', component:ViewCategoriesComponent},
+               {path: 'add-category', component:AddCategoryComponent},
+               {path: 'exams', component:ViewExamsComponent},
+               {path: 'add-exam', component:AddExamComponent},
              ]},
 
   {path: 'user', component:UserComponent, canActivate:[NormalGuard]},
