@@ -12,4 +12,5 @@ export class ExmanService {
   public listExams(){
     return this.http.get(`${baseUrl}/exam/list`)
   }
+  
 }

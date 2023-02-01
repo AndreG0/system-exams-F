@@ -8,7 +8,7 @@
         <mat-form-field class="w100" appearance="fill">
           <mat-label>Title</mat-label>
           <input
-
+[(ngModel)]="examData.title"
           type="text"
           name="title"
           required
@@ -18,7 +18,7 @@
         <mat-form-field class="w100" appearance="fill">
           <mat-label>Description</mat-label>
           <textarea
-
+          [(ngModel)]="examData.description"
           type="text"
           name="description"
           placeholder="Type the description"
@@ -31,7 +31,7 @@
             <mat-form-field class="w100" appearance="fill">
               <mat-label>Maximun points</mat-label>
               <input
-
+              [(ngModel)]="examData.maximumPoints"
               type="text"
               name="maximumPoints"
               placeholder="Type the maximum points"
@@ -42,7 +42,7 @@
             <mat-form-field class="w100" appearance="fill">
               <mat-label>Number Questions</mat-label>
               <input
-
+              [(ngModel)]="examData.numberQuestions"
               type="text"
               name="numberQuestions"
               placeholder="Type the number questions"
@@ -50,7 +50,24 @@
             </mat-form-field>
           </div>
         </div>
+
+        <mat-slide-toggle class="mt20 my-2" [checked]="false" [(ngModel)]="examData.active" color="primary">
+          Publication Status
+        </mat-slide-toggle>
+
+          <mat-form-field appearance="fill"class="mt20 w100">
+            <mat-label>Categories</mat-label>
+            <mat-select name="category" [(ngModel)]="examData.category.categoryId">
+              <mat-option *ngFor="let c of categories" value="c.category">
+                {{c.title}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field >
+          <div class="container text-center my-2">
+            <button mat-raised-button color="primary">Add</button>
+          </div>
       </form>
-  </div>
+    </div>
   </div>
 </mat-card>
+

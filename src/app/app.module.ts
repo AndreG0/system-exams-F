@@ -16,7 +16,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 import { NavbarComponent } from './Layout/navbar/navbar.component';
 import { FooterComponent } from './Layout/footer/footer.component';
@@ -71,9 +72,11 @@ import { AddExamComponent } from './Components/Pages/Admin-dashboard/add-exam/ad
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
+    MatSlideToggleModule,
     HttpClientModule,
     FormsModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule
 
   ],
   providers: [AuthInterceptorProviders],
