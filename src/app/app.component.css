@@ -1,5 +1,8 @@
 .app_container {
-
-  background: hsl(0, 0%, 96%);
+  background: hsl(0, 0%, 96%) !important;
+  height: 100vh !important;
 }
 
+.text-center{
+  text-align: center;
+}

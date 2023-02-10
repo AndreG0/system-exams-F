@@ -27,4 +27,27 @@ export class ViewExamsComponent implements OnInit {
     )
   }
 
+  deleteExam(examId:any){
+    Swal.fire({
+      title:'Delete exam',
+      text:'Are you sure you want to delete this exam?',
+      icon:'warning',
+      showCancelButton:true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Delete',
+      cancelButtonText:'Cancel'
+    }).then((result)=>{
+      this.exmanService.deleteExam(examId).subscribe(
+        (data)=>{
+          this.exams = this.exams.filter((exam:any) => exam.examId != examId);
+          Swal.fire('Delete exam', 'The exam has been deleted', 'success');
+        },
+        error => {
+          Swal.fire('Error', 'Error deleting exam', 'error');
+        }
+      )
+    })
+  }
+
 }

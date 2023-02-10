@@ -18,9 +18,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { NavbarComponent } from './Layout/navbar/navbar.component';
-import { FooterComponent } from './Layout/footer/footer.component';
 import { LoginComponent } from './Components/Pages/login/login.component';
 import { SignupComponent } from './Components/Pages/signup/signup.component';
 import { HomeComponent } from './home/home.component';
@@ -33,6 +34,15 @@ import { ViewCategoriesComponent } from './Components/Pages/Admin-dashboard/view
 import { AddCategoryComponent } from './Components/Pages/Admin-dashboard/add-category/add-category.component';
 import { ViewExamsComponent } from './Components/Pages/Admin-dashboard/view-exams/view-exams.component';
 import { AddExamComponent } from './Components/Pages/Admin-dashboard/add-exam/add-exam.component';
+import { UpdateExamComponent } from './Components/Pages/Admin-dashboard/update-exam/update-exam.component';
+import { ViewExamQuestionsComponent } from './Components/Pages/Admin-dashboard/view-exam-questions/view-exam-questions.component';
+import { AddQuestionComponent } from './Components/Pages/Admin-dashboard/add-question/add-question.component';
+import { UpdateQuestionComponent } from './Components/Pages/Admin-dashboard/update-question/update-question.component';
+import { SidebarComponent as UserSidebar } from './Components/Pages/user/User-dashboard/sidebar/sidebar.component';
+import { LoadExamComponent } from './Components/Pages/user/User-dashboard/load-exam/load-exam.component';
+import { InstructionsComponent } from './Components/Pages/user/User-dashboard/instructions/instructions.component';
+import { StartComponent } from './Components/Pages/user/User-dashboard/start/start.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -42,7 +52,6 @@ import { AddExamComponent } from './Components/Pages/Admin-dashboard/add-exam/ad
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent,
     SignupComponent,
     HomeComponent,
     LoginComponent,
@@ -55,10 +64,15 @@ import { AddExamComponent } from './Components/Pages/Admin-dashboard/add-exam/ad
     AddCategoryComponent,
     ViewExamsComponent,
     AddExamComponent,
-
-
-
-
+    UpdateExamComponent,
+    ViewExamQuestionsComponent,
+    AddQuestionComponent,
+    UpdateQuestionComponent,
+    UserSidebar,
+    LoadExamComponent,
+    InstructionsComponent,
+    StartComponent,
+ 
 
   ],
   imports: [
@@ -76,7 +90,11 @@ import { AddExamComponent } from './Components/Pages/Admin-dashboard/add-exam/ad
     HttpClientModule,
     FormsModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({showForeground:true}),
 
   ],
   providers: [AuthInterceptorProviders],

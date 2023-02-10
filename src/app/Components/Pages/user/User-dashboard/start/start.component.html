@@ -1,0 +1,91 @@
+ <div class="bootstrap-wrapper" *ngIf="!isSend">
+  <div class="container mt20">
+    <div class="row">
+      <div class="col-md-2">
+        <!--Instructions-->
+        <mat-card style="margin-top:70px">
+          <mat-card-content>
+            <h3 class="text-center"><b>Instructions</b></h3>
+            <ul class="my-2">
+              <li class="my-1">Do not update the page, otherwise you will get new questions in this questionnaire</li>
+              <li class="my-1">Don’t change the window</li>
+              <li class="my-1">Don’t minimize the window</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-md-7">
+        <!--Questions-->
+        <ng-container *ngIf="questions">
+          <h1 class="mt20">
+            In progress <b>{{questions[0].exam.title}}</b>
+          </h1>
+        </ng-container>
+        <mat-card *ngFor="let q of questions; let i = index">
+          <mat-card-content>
+            <p><b>{{ i+1 }} </b><span [innerHTML]="q.content"></span></p>
+          <mat-divider></mat-divider>
+          <div class="row mt20 ">
+            <div class="col-md-7 mt10">
+              <input [(ngModel)]="q.answerChosen" type="radio" [value] ="q.option1" name={{i}}> {{q.option1}}
+            </div>
+            <div class="col-md-7 mt10">
+              <input [(ngModel)]="q.answerChosen" type="radio" [value] ="q.option2" name={{i}}> {{q.option2}}
+            </div>
+            <div class="col-md-7 mt10">
+              <input [(ngModel)]="q.answerChosen" type="radio" [value] ="q.option3" name={{i}}> {{q.option3}}
+            </div>
+            <div class="col-md-7 mt10">
+              <input [(ngModel)]="q.answerChosen" type="radio" [value] ="q.option4" name={{i}}> {{q.option4}}
+            </div>
+          </div>
+          </mat-card-content>
+        </mat-card>
+
+        <div class="container text-center mt20 mb20">
+          <button (click)="sendQuiz()" mat-raised-button color="primary">Send quiz</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <!--Progress-->
+        <mat-card style="margin-top: 70px;">
+          <mat-card-header>
+            <mat-card-title class="text-center mt10">
+             Timer
+            </mat-card-title>
+            <mat-card-subtitle class="text-center">
+              The questionnaire will be sent automatically when the timer reaches 0:0
+            </mat-card-subtitle>
+          </mat-card-header>
+          <div class="container text-center">
+            <h1 class=" my-4">{{getFormattedTime()}}</h1>
+            <mat-spinner class="my-2" mode="determinate" style="margin: auto;" [value] = "(timer/(this.questions?.length * 2 * 60)*100)"></mat-spinner>
+          </div>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+ </div>
+
+<div class="bootstrap-wrapper" *ngIf="isSend">
+  <div class="container mt20">
+    <div class="col-md-6 offset-md-3">
+
+      <mat-card>
+
+        <h1 class="fs-1 my-4 fst-italic text-center">Result of the quiz</h1>
+        <mat-card-content>
+          <h1 class="text-center my-4">Points obtained: {{pointsObtained}}</h1>
+          <h1 class="text-center my-4">Correct Answers: {{correctAnswers}}</h1>
+        </mat-card-content>
+
+        <div class="col-md-6 offset-md-3 text-center my-5">
+          <button (click)="printPage()" class="me-2"  mat-raised-button color="primary">Print</button>
+          <button mat-raised-button color="accent" [routerLink]="'/user/0'">Start</button>
+        </div>
+
+      </mat-card>
+    </div>
+  </div>
+</div>

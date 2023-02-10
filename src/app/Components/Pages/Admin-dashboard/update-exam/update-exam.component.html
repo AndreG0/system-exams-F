@@ -1,14 +1,14 @@
 
 
 <mat-card>
-  <h1 class="text-secondary p-3 my-2">Add Questionnaire</h1>
+  <h1 class="text-secondary p-3 my-2">Update Exam</h1>
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <form (ngSubmit) = "saveExam()">
+      <form *ngIf="exam" (submit) = "updateExam()">
         <mat-form-field class="w100" appearance="fill">
           <mat-label>Title</mat-label>
           <input
-         [(ngModel)]="examData.title"
+         [(ngModel)]="exam.title"
           type="text"
           name="title"
           required
@@ -19,7 +19,7 @@
         <mat-form-field class="w100" appearance="fill">
           <mat-label>Description</mat-label>
           <textarea
-          [(ngModel)]="examData.description"
+          [(ngModel)]="exam.description"
           type="text"
           name="description"
           placeholder="Type the description"
@@ -32,7 +32,7 @@
             <mat-form-field class="w100" appearance="fill">
               <mat-label>Maximun points</mat-label>
               <input
-              [(ngModel)]="examData.maximumPoints"
+              [(ngModel)]="exam.maximumPoints"
               type="text"
               name="maximumPoints"
               placeholder="Type the maximum points"
@@ -43,7 +43,7 @@
             <mat-form-field class="w100" appearance="fill">
               <mat-label>Number Questions</mat-label>
               <input
-              [(ngModel)]="examData.numberQuestions"
+              [(ngModel)]="exam.numberQuestions"
               type="text"
               name="numberQuestions"
               placeholder="Type the number questions"
@@ -52,13 +52,13 @@
           </div>
         </div>
 
-        <mat-slide-toggle class="mt20 my-2" name="active" [checked]="false" [(ngModel)]="examData.active" color="primary">
+        <mat-slide-toggle class="mt20 my-2" name="active"  [checked]="false" [(ngModel)]="exam.active" color="primary">
           Publication Status
         </mat-slide-toggle>
 
           <mat-form-field appearance="fill"class="mt20 w100">
             <mat-label>Categories</mat-label>
-            <mat-select name="category" [(ngModel)]="examData.category.categoryId">
+            <mat-select name="category" [(ngModel)]="exam.category.categoryId">
               <mat-option *ngFor="let c of categories"[value] = "c.categoryId">
                 {{c.title}}
               </mat-option>

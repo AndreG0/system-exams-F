@@ -1,38 +1,53 @@
-<mat-card >
+
+
+<mat-card>
   <mat-action-list>
-    <div mat-subheader>Menu</div>
-    <div class="p-2 ">
+    <div mat-subheader><h2 class="title text-secondary">Menu </h2></div>
+    <div class="row p-2">
 
+      <a  class="my-2" routerLink="/admin/welcome"><button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span class="ml10">Inicio</span>
+      </button></a>
 
-      <button routerLink="/admin" mat-list-item>
-        <mat-icon mat-list-icon>home</mat-icon> Inicio
-      </button>
-      <button mat-list-item routerLink="/admin/profile">
-        <mat-icon mat-list-icon>account_circle</mat-icon> Profile
-      </button>
+      <a class="my-2" routerLink="/admin/profile" >
+        <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span class="ml10">Profile</span>
+      </button></a>
 
+      <a class="my-2" routerLink="/admin/categories">
+        <button mat-menu-item>
+        <mat-icon>list</mat-icon>
+        <span class="ml10">Categories</span>
+      </button></a>
 
-      <button mat-list-item routerLink="/admin/categories">
-        <mat-icon mat-list-icon>list</mat-icon> Categories
-      </button>
-      <button mat-list-item routerLink="/admin/add-category">
-        <mat-icon mat-list-icon>add</mat-icon> Add Category
-      </button>
+      <a class="my-2" routerLink="/admin/add-category">
+        <button mat-menu-item>
+        <mat-icon>add</mat-icon>
+        <span class="ml10">Add Category</span>
+      </button></a>
 
+      <a class="my-2" routerLink="/admin/exams">
+        <button mat-menu-item>
+        <mat-icon>quiz</mat-icon>
+        <span class="ml10">Exams</span>
+      </button></a>
 
-      <button mat-list-item routerLink="/admin/exams">
-        <mat-icon mat-list-icon>quiz</mat-icon> Exmans
-      </button>
-      <button mat-list-item routerLink="/admin/add-exam">
-        <mat-icon mat-list-icon>add</mat-icon> Add Exman
-      </button>
+      <a class="my-2" routerLink="/admin/add-exam">
+        <button mat-menu-item>
+        <mat-icon>add</mat-icon>
+        <span class="ml10">Add Exman</span>
+      </button></a>
 
-      <button mat-list-item routerLink="/admin/profile">
-        <mat-icon mat-list-icon>logout</mat-icon> Logout
-      </button>
+    
+      <a class="my-2" routerLink="/admin/profile">
+        <button (click)="logout()" mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span class="ml10">Logout</span>
+      </button></a>
+
 
     </div>
-
   </mat-action-list>
-</mat-card>
-
+  </mat-card>

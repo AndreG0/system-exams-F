@@ -1,0 +1,44 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card class="mt-20">
+          <mat-card-header>
+              <mat-card-title> Read the instructions on this page</mat-card-title>
+          </mat-card-header>
+          <mat-card-subtitle class="p-3">  One more step to start </mat-card-subtitle>
+          <mat-card-content class="ml30">
+                <h1>{{exam.title}}</h1>
+                <p class="text-secondary">{{exam.description}}</p>
+                <mat-divider></mat-divider>
+
+          <br>
+          <h1 class="p-3"> Important Instructions</h1>
+          <ul >
+            <li>This questionnaire is for practice purposes </li>
+            <li>You have to send the questionnaire in <b>{{exam.numberQuestions * 2}}</b> minutes</li>
+            <li>Can try the questionnaire any number of times</li>
+            <li>There's <b>{{exam.maximumPoints/exam.numberQuestions}}</b> poins for question</li>
+          </ul>
+          <mat-divider></mat-divider>
+          <br>
+          <h1 class="p-1"> Test attempts</h1>
+          <ul>
+            <li>Press the <b>START</b> button to start the exam</li>
+            <li>Time will start the moment you click the start button</li>
+            <li>Cannot resume this questionnaire if it is interrupted for some reason</li>
+            <li>Scroll down to move to next question</li>
+            <li>Click on the button send questionnaire at the end </li>
+            <li>The test report will be generated automatically in PDF format</li>
+          </ul>
+        </mat-card-content>
+
+        <mat-card-actions class="text-center mb20 d-flex justify-content-center">
+          <button (click)="startExam()" mat-raised-button color="primary">Start Test</button>
+        </mat-card-actions>
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

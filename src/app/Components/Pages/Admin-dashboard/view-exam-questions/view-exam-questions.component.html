@@ -1,0 +1,46 @@
+<h1 class="mt20 text-secondary ">Questions {{title}}</h1>
+
+<div class="bootstrap-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container tex-center">
+        <button mat-raised-button color="primary" [routerLink]="'/admin/add-question/'+examId+'/'+title">Add Question</button>
+      </div>
+      <mat-card *ngFor="let q of questions; let i = index" class="mt20">
+        <mat-card-content>
+          <p>
+            <b>{{i + 1}}</b>
+            <span class="ml20" [innerHTML]="q.content"></span>
+          </p>
+
+          <div class="container-fluid my-5">
+            <div class="row">
+              <div class="col-md-6">
+                <p>1)<b> {{q.option1}}</b></p>
+              </div>
+              <div class="col-md-6">
+                <p>2)<b> {{q.option2}}</b></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <p>3)<b> {{q.option3}}</b></p>
+              </div>
+              <div class="col-md-6">
+                <p>4)<b> {{q.option4}}</b></p>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <p class="mt20 my-5 text-secondary">
+              <b>Correct Answer : {{q.answer}}</b>
+            </p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="deleteQuestion(q.questionId)" color="warn">Delete</button>
+          <button [routerLink]= "'/admin/question/'+q.questionId" mat-button color="primary">Update</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,8 @@
 >
   <mat-icon>menu_books</mat-icon>
 </a>
-  <span>Exam Portal</span>
+  <span>Exam Portal &nbsp; - </span>&nbsp;&nbsp;&nbsp;
+  <img src="../../../assets/img/synclab_white-01.png" width="8%" alt="">
   <span class="example-spacer"></span>
 
   <a
@@ -15,7 +16,8 @@
     [routerLink]="'/login'"
     mat-icon-button
     class = "example-icon favorite-ico fonz"
-    aria-label = "Example icon-button with heart icon">Login
+    style="align-items: center"
+    aria-label = "Example icon-button with heart icon ">Login
   </a>
 
   <a
@@ -40,7 +42,7 @@
   <button  *ngIf = "isLoggedIn && user"
     mat-button
     style="margin-right: 10px;"
-    class="example-icon favorite-icon"
+    class="example-icon favorite-icon me-2 my-2"
     routerLink="/admin/profile"
     aria-label="Example icon-button with heart icon">  {{ user.name }}
   </button>

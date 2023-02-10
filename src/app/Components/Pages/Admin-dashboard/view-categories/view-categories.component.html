@@ -1,19 +1,17 @@
 <mat-card>
-  <mat-list >
+  <mat-list role="list">
     <div class="text-secondary" mat-subheader>
       All categories
     </div>
 <div class="container-fluid p-3 ">
   <mat-list-item *ngFor = "let c of categories">
-
     <div class=" row d-flex justify-content-start p-3 my-2">
-      <div class="text-dark">{{ c.title }}</div>
+
+      <div mat-list-icon class="text-dark">{{ c.title }}</div>
       <div class=" text-secondary">{{ c.description }}</div>
             <mat-divider></mat-divider> <mat-divider></mat-divider>
     </div>
-
   </mat-list-item>
-
 </div>
 
   </mat-list>
@@ -24,3 +22,7 @@
   </div>
 
 </mat-card>
+
+
+
+

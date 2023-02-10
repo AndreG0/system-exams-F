@@ -1,0 +1,21 @@
+
+<mat-card>
+<mat-action-list>
+  <div mat-subheader><h2 class="title text-secondary">Categories Available </h2></div>
+  <div class="row p-2">
+
+    <a  class="my-2"routerLink="/user/0"><button mat-menu-item>
+      <mat-icon>quiz</mat-icon>
+      <span class="ml10">Exams</span>
+    </button></a>
+
+    <a class="my-2" [routerLink]="'/user/'+c.categoryId" *ngFor="let c of categories">
+      <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span class="ml10">{{c.title}}</span>
+    </button></a>
+
+  </div>
+</mat-action-list>
+</mat-card>
+

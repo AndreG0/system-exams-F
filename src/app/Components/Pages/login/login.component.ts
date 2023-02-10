@@ -45,13 +45,13 @@ export class LoginComponent implements OnInit{
           if(this.logService.getUserRole()== "ADMIN"){
             //ADMIN
             //window.location.href = '/admin';
-            this.router.navigate(['admin']);
+            this.router.navigate(['admin/welcome']);
             this.logService.loginStatusSubjec.next(true);
           }
           else if(this.logService.getUserRole() == "USER"){
             //USER
             //window.location.href = '/user';
-            this.router.navigate(['user']);
+            this.router.navigate(['user/0']);
             this.logService.loginStatusSubjec.next(true);
           }
           else{
